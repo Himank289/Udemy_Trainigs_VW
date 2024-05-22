@@ -1,0 +1,13 @@
+1.Clean Code: 
+https://github.com/academind/clean-code-course-code
+
+2.Modern Java - Learn Java 8 features by coding it:
+https://github.com/dilipsundarraj1/java-8
+
+3.MicroServices - https://martinfowler.com/microservices/
+
+4.Spring Framework - 
+https://github.com/in28minutes/spring-master-class,
+https://www.baeldung.com/spring-boot-actuators,
+https://www.javainuse.com/spring/spring-boot-aop,
+https://www.javaguides.net/2019/08/spring-boot-spring-jdbc-mysql-crud-example.html
