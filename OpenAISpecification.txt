@@ -1,0 +1,71 @@
+Designing Restful API's :
+
+Step1: Create a new API
+	Title:Open API specification for CMS
+	Description:API Specification document of the CMS System
+	Contact: PraveenKumar Bouna --contact details
+	Version: 1.0
+
+Step 2: Identify the type of API
+	public
+
+Step 3:Identify the server base url
+	http://{hostname}:{port}/{directory}
+	http://localohsot:127.0.0/api
+
+Step 4: Identify the resources
+
+Step 5: Have the resources as plurals
+	courses(/api/courseid)
+
+Step 6: Define the resource models
+	course id, course name, course duration, course type
+
+Step 7: Select the unique identifier for each resource
+	Course id, Student id
+
+Step 8: Identify the association for each resource
+	/api/courses/{courseId}/students
+
+Step 9: Check URL Complexity
+	collection/item/colection is valid
+	courses/{courseId}/students is valid 
+
+Step 10: Identify the method for each resource.
+	get,post,put,delete,patch
+
+Step 11: Identify the parameters required for the method
+	query,path,header,cookie
+
+Step 12: Identify the content type application/json
+
+Step 13: Identify the request body for the method
+
+Step 14 : Identify the http status codes for the methods
+
+Step 15 : Identify the content-type of response for each method
+	application/json
+
+Step 16 : Identify the Response body for the method
+
+Step 17: Handle errors for the methods
+
+Step 18: Identify the need for filtering and add if needed
+
+Step 19: Identify the need for Pagination and add if needed
+
+Step 20: Identify the need for Sorting and add if needed
+
+Step 21: Identify the API Versioning Scheme and Set the API Version
+
+Versioning API Approaches :
+
+1. No Versioning  -- changes will occur directly in the existing api
+2. URL Versioning -- /api/v1/colleges/10
+3. Query String Versioning --/api/colleges/10?version=1
+4. Header Versioning -- Custom header added to indicate version X-API-Version=2
+5. Media Type Versioning -- Content-Type:application/vnd.cms.v1+json
+
+
+
+		

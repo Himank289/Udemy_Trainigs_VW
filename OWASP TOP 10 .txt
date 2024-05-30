@@ -1,0 +1,29 @@
+spring authentication,run all eclipse project in intellij, junit & mockito 
+
+chatgpt,slack mobile
+
+
+OWASP Top 10: Comprehensive Web Application Security course:-
+
+Cross-Site Scripting : injecting the javascript code 
+1.Dom-based
+2.Reflected -- injected js code to victim's browser
+3.Persistant --injected js code to vulnerable app
+dvwa: damn vulnerable web application
+
+session hijacking cookie example
+key logger keyloogerjs,keylogger php, keys.txt example
+
+owasp top 10 vulnerabilitie, Burp Suite/owasp zap is a proxy software and the most popular penetration testing tool
+
+Command Injection -no input validation,test with ping command,http headers/cookies
+
+SQL Injection-Error-based, Blind SQL Injection
+
+Cross-Site Request Forgery:-authenticated victim makes unwanted changes on application
+Infromation disclousre:-comments in source code,error messages
+Path Traversal: ../../../etc/passwd
+File Inclusion
+Session Management : basic,digest,ntlm,form-based,mfa
+XML External Entities
+Recon:-publicly available information like domain information,dnsrecon,wafwoof,openssl
