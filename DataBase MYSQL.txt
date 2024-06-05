@@ -1,0 +1,165 @@
+
+Database MYSQL :
+
+1.CREATE DATABASE test;
+2.DROP DATABASE test;
+3.SHOW databases;
+
+CREATE TABLE customers(
+id INT auto_increment primary key ,
+first_name varchar(20),
+gender enum('M','F'),
+last_name varchar(20),
+phone_number varchar(11)
+);
+
+DROP TABLE customers;
+SHOW TABLES;
+
+-- adding comments in sql
+describe customers;
+
+ALTER TABLE products
+ADD/DROP column coffee_origin VARCHAR(20);
+
+create table test(
+id int auto_increment primary key not null,
+First_name varchar(10) 
+);
+
+insert into test(first_name)values ("himank"),("shiv");
+select * from test;
+
+truncate table test;
+
+ALTER TABLE address
+ADD/DROP primary key (id);
+
+ALTER TABLE people
+ADD CONSTRAINT fk_PeopleAddress
+foreign key(address_id) references address(id);
+
+ALTER TABLE people
+DROP foreign key fk_PeopleAddress,
+DROP Index fk_PeopleAddress; 
+
+ALTER TABLE pets
+ADD constraint u_species unique(species);
+
+ALTER TABLE pets
+DROP index u_species;
+
+ALTER Table pets
+RENAME column animal_type to `animal type`;
+
+ALTER Table pets
+Modify column `animal type` varchar(20);
+
+insert into products(name,price,coffee_origin)values('latte',9.99,'brazil');
+
+insert into products(name,price,coffee_origin)values('machiaato',3.00,'brazil'),
+('cappucino',3.50,'costa rica'),('espresso',3.70,'Indonesia');
+
+update products
+set price=8.99
+where id=2;
+
+SET sql_safe_updates=false;
+
+update products
+set price=2.99,coffee_origin='india'
+where name='espresso';
+
+delete from products
+where name='machiaato';
+
+
+3/06/24:
+
+select first_name , last_name  from customers;
+
+select * from products
+where name='latte'
+and price=9.99
+
+select * from customers
+where last_name IN ('taylor','bluth','armstrong');
+
+select * from orders
+where order_time between '2022-01-01 01:40:42' AND  '2023-04-25 06:21:12';
+
+select * from customers
+where last_name LIKE 'w%';	
+
+select * from customers
+where first_name LIKE '_o_';
+-- _ is used for single character position whereas % is for multiple character position.
+
+SELECT * FROM products
+ORDER BY price,first_name ASC/DESC;	
+
+SELECT distinct first_name,last_name from customers;
+
+SELECT * FROM customers
+LIMIT 5 OFFSET 5;
+
+SELECT first_name as fname, last_name as lname from customers;  -- column aliases
+
+SELECT p.name,o.order_time from orders as o      -- INNER JOIN
+INNER JOIN products p on o.product_id=p.id
+ORDER BY o.order_time;
+
+SELECT o.*, c.* FROM orders as o
+LEFT JOIN customers c on o.customer_id=c.id;
+
+SELECT p.name ,p.price , c.first_name,c.last_name , o.order_time from orders o
+INNER JOIN products p ON o.product_id=p.id
+INNER JOIN customers c ON o.customer_id=c.id          
+order by o.order_time;                          					--joining multiple columns
+
+ select p.name,p.price,o.order_time,c.gender from orders o
+ INNER JOIN products p ON p.id=o.product_id
+ INNER JOIN customers c ON c.id=o.customer_id
+ where gender='F'
+ AND order_time between 2023-01-01 AND '2023-01-30';
+ 
+Normalisation: splitting columns into multiple tables
+1NF- 1. Every column should have contain 1 value 
+2.Table must have a primary key
+3. no duplicate rows
+
+2NF - 1NF and every column which is not a primary key should dependent on whole of primary key
+
+3NF - 2NF any non primary key column is dependent only on the whole of the primary key
+BCNF
+
+
+Aggregate Functions:
+select count(first_name) from customers;
+select sum(seat_no) from customers;
+select min/max/avg(length_min) from films;
+
+select customer_id,screening_id,count(*) from bookings
+group by customer_id,screening_id
+order by customer_id
+Having customer_id=10;
+
+SELECT customer_id,screening_id ,count(*) AS no_seats from bookings b
+INNER JOIN reserved_seat rs on rs.booking_id=b.id
+group by customer_id,screening_id 
+order by customer_id; 
+
+Subqueries:
+Co-related & Non co-related subquery
+
+MYSQL String Functions:
+select concat(first_name," ",last_name)as full_name from customers;
+Select substring(string,start,length);
+Select substring("thisasubstring",3,3) as substring;
+SELECT UPPER(name) as name from rooms;
+
+MYSQL Date Functions:
+select date (start_time) from screenings;
+select month (start_time) from screenings;
+select year (start_time) from screenings;
+                                                                     
