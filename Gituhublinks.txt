@@ -13,4 +13,5 @@ https://www.javainuse.com/spring/spring-boot-aop,
 https://www.javaguides.net/2019/08/spring-boot-spring-jdbc-mysql-crud-example.html
 https://www.javainuse.com/webseries/spring-security-jwt/chap4
 
-
+5. Angular with Springboot:-
+https://github.com/in28minutes/full-stack-with-angular-and-spring-boot
