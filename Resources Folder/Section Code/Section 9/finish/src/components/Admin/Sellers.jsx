@@ -56,7 +56,7 @@ const Sellers = () => {
             sellers.map((s) => (s.id === seller.id ? updatedSeller : s))
         );
 
-        apiClient.patch(`/users/${seller.id}`, updatedSeller).catch((err) => {
+        apiClient.patch(`/users/${seller.id}`, updatedSveller).catch((err) => {
             setErrors(err.message);
             setSellers(sellers);
         });
